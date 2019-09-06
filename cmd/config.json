@@ -1,0 +1,21 @@
+{
+  "application": {
+    "port": "3000"
+  },
+  "website": {
+    "title": "Default title",
+    "favicon": "",
+    "assets": {
+      "path": "/assets/",
+      "dir": "./website/assets/"
+    },
+    "public_folder": {
+      "path": "/public",
+      "dir": "./public/"
+    },
+    "template_dir": "website/templates",
+    "base_template": "base.html",
+    "views_dir": "views/",
+    "styles": ["/assets/css/main.css"]
+  }
+}

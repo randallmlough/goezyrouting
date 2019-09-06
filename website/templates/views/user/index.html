@@ -1,0 +1,12 @@
+{{ define "page info" }}
+    <title>Users</title>
+    <meta name="description" content="Users">
+{{ end }}
+{{ define "yield" }}
+    <h1>Users</h1>
+    <ul>
+        {{ range .}}
+            <li>{{.Name}}</li>
+        {{ end }}
+    </ul>
+{{ end }}

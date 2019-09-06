@@ -1,0 +1,7 @@
+{{ define "page info" }}
+    <title>{{.Page.Data.Name}}</title>
+    <meta name="description" content="Users">
+{{ end }}
+{{ define "yield" }}
+    <h1>User: {{.Name}}</h1>
+{{ end }}

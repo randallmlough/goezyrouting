@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    {{ block "page info" .}}
+        <title>{{.Title}}</title>
+        <meta name="description" content="Default Description">
+    {{ end }}
+    {{ block "head" .}}
+        {{ range .Styles }}
+            <link href="{{.}}" rel="stylesheet" type="text/css">
+        {{ end }}
+    {{ end }}
+</head>
+<body>
+    <div>
+        <h5>Page URI: {{uri .Page}}</h5>
+        {{block "yield" .Page.Data }}{{end}}
+        {{with .Page.Error}}
+            <strong>ERROR: {{.}}</strong>
+        {{end}}
+    </div>
+</body>
+</html>
