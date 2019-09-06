@@ -2,7 +2,7 @@ package goezyrouting
 
 import (
 	"context"
-	"github.com/pkg/errors"
+	"errors"
 	"log"
 	"net/http"
 	"os"
@@ -93,7 +93,7 @@ func (s *Server) StartTLS(cf, kf string) error {
 	defer cancel()
 
 	if err := s.Shutdown(ctx); err != nil {
-		return errors.Wrap(err, "error stopping server")
+		return errors.New("error stopping server")
 	}
 
 	s.Log("gracefully stopped server")

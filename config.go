@@ -2,7 +2,7 @@ package goezyrouting
 
 import (
 	"encoding/json"
-	"github.com/pkg/errors"
+	"errors"
 	"io/ioutil"
 	"path/filepath"
 )
@@ -16,12 +16,12 @@ func LoadConfig(path string) (*Config, error) {
 
 	bytes, err := ioutil.ReadFile(path)
 	if err != nil {
-		return nil, errors.Wrap(err, "error reading config file")
+		return nil, errors.New("error reading config file")
 	}
 	var cfg = new(Config)
 
 	if err := json.Unmarshal(bytes, cfg); err != nil {
-		return nil, errors.Wrap(err, "unable to decode into struct")
+		return nil, errors.New("unable to decode into struct")
 	}
 
 	return cfg, nil
